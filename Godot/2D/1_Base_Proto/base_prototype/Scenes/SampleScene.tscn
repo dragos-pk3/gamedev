@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdkuarvsvenl3"]
+
+[ext_resource type="Texture2D" uid="uid://d4ju3bbad5cl5" path="res://icon.svg" id="1_8ve2m"]
+[ext_resource type="PackedScene" uid="uid://b53b7gb6v861i" path="res://Prefabs/SimplePlayer.tscn" id="2_bdpsi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fc0e3"]
+size = Vector2(1145, 48)
+
+[node name="Game" type="Node"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(556, 616)
+metadata/_edit_group_ = true
+
+[node name="Icon" type="Sprite2D" parent="StaticBody2D"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(19.5, 0)
+scale = Vector2(8.96094, 0.34375)
+texture = ExtResource("1_8ve2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(19.5, 0)
+shape = SubResource("RectangleShape2D_fc0e3")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_bdpsi")]
+position = Vector2(97, 424)
